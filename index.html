@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.min.css" integrity="sha512-I8lSB676wT2jGSNnvIhbYGqHMiZOc0+cl18soJSWPvJCkGm8xnTcXZafn2xTf1woMXz1AY3Z1Vd/qAPvjXB4Kw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="style.css">
+  <title>ZenMedia</title>
+</head>
+
+<body class="text-success">
+
+
+  <div class="modal fade" id="CreatePost" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog text-light">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create a post</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="text-light">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="name" class="col-form-label">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter name" required>
+            </div>
+            <div class="form-group password-box">
+              <label for="password" class="col-form-label">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter post password (to delete post)" required>
+              <div class="toggle-password">
+                <i class="fa fa-eye"></i>
+                <i class="fa fa-eye-slash"></i>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="title" class="col-form-label">Title</label>
+              <input type="text" class="form-control" id="title" placeholder="Enter post title" required>
+            </div>
+            <div class="form-group">
+              <label for="query" class="col-form-label">Query:</label>
+              <textarea class="form-control" id="query" placeholder="Enter query" required></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success" onclick=postdata() data-dismiss="modal" aria-label="Close">Create</button>
+        </div>
+      </div> 
+    </div>
+  </div>
+
+  <div class="container m-auto"  id="home">
+    <div class="title">
+      <h1 class="display-1">ZenMedia</h1>
+      <p class="lead font-italic">
+        Where your queries are addressed
+      </p>
+      <a href="#" data-toggle="modal" data-target="#CreatePost" class="text-light">Create a post</a>
+      <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+    </div>
+    
+    <div class="posts mt-5">
+      <h3 class="display-5 text-light">Latest Posts</h3>
+      <div class="row" id="posts">
+
+      </div>
+    </div>
+  </div>
+
+  
+
+
+
+
+
+  <script src="main.js"></script>
+</body>
+</html>
