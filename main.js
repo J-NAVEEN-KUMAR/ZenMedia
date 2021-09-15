@@ -47,9 +47,12 @@ async function postdata() {
     title = title.value;
     query = query.value;
     console.log(username,password,title,query);
+    const regexn = /^\d{8,15}$/;
+    let p_valid = regexn.test(password);
+    console.log(p_valid);
     
-    if(username == "" || password == "" || title == "" || query == ""){
-      alert("Please fill all the fields!");
+    if(username == "" || password == "" || title == "" || query == "" || !p_valid){
+      alert("Please fill all the fields and password must contain only digits (range 8-15)!");
     }
     else {
       let resp = await fetch(apiurl,{
